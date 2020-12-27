@@ -29,3 +29,5 @@ const router = new VueRouter({
 // is created but we have to make it available inside app.js file
 // so export it
 export default router // router object is exported automatically now
+
+// test git

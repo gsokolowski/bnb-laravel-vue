@@ -53130,6 +53130,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_2__["default"]({
 // so export it
 
 /* harmony default export */ __webpack_exports__["default"] = (router); // router object is exported automatically now
+// test git
 
 /***/ }),
 
