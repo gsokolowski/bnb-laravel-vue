@@ -1,7 +1,8 @@
-import ExampleComponent from "./components/ExampleComponent"
-import Example2 from "./components/Example2"
-
 import VueRouter from "vue-router";
+
+import ExampleComponent from "./components/ExampleComponent"
+import Second from "./components/Second"
+
 
 // Define some routes as
 // an array of objects
@@ -14,7 +15,7 @@ const routes = [
     },
     {
         path: "/second",
-        component: Example2,
+        component: Second,
         name: "second",
     },
 ]
