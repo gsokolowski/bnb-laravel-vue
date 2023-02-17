@@ -13,9 +13,18 @@
 </template>
 
 <script>
+// business logic of this componnet
+// here goes the Business logic of this component
+// mounted as a Life circel event
+// and is fired always when this component is rendered
+// this Component needs to be imported into routes file
 export default {
   mounted() {
-    console.log("Component Example 2 mounted.");
+    console.log("Component Second mounted.");
   }
 };
 </script>
+
+<style scoped>
+
+</style>

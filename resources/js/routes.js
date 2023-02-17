@@ -1,8 +1,7 @@
 import VueRouter from "vue-router";
 
-import ExampleComponent from "./components/ExampleComponent"
-import Second from "./components/Second"
-
+import Bookables from "./bookables/Bookables"
+import SecondComponent from "./components/Second"
 
 // Define some routes as
 // an array of objects
@@ -10,12 +9,12 @@ import Second from "./components/Second"
 const routes = [
     {
         path: "/",
-        component: ExampleComponent, // from ExampleComponent.vue
+        component: Bookables, // from Bookables.vue
         name: 'home',
     },
     {
         path: "/second",
-        component: Second,
+        component: SecondComponent,
         name: "second",
     },
 ]
@@ -31,4 +30,3 @@ const router = new VueRouter({
 // so export it
 export default router // router object is exported automatically now
 
-// test git

@@ -6,7 +6,7 @@
                     <div class="card-header">Vue Example Component</div>
 
                     <div class="card-body">
-                        I'm an example component.
+                        I'm an example component here.
                     </div>
                 </div>
             </div>
@@ -21,7 +21,7 @@
 // this Component needs to be imported into routes file
     export default {
         mounted() {
-            console.log('Component mounted xxx ddssd.')
+            console.log('Component mounted Example Component.')
         }
     }
 </script>

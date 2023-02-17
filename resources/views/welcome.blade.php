@@ -8,13 +8,13 @@
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
-
+        <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    <!-- Land js/app.js only just after pae load not before defer value determinates this-->
     <script src="{{ asset('js/app.js') }}" defer></script>
     </head>
     <body>
-        This is welcome page bnblaravelvue.local
-        <div id="app">
-            <router-view></router-view> <!-- it will display vew commpomemts here when it will match the route-->
+        <div id="app"><!--  vue.js is mounted here -->
+            <index></index> <!--  Index.vue compponent rendered here -->
         </div>
     </body>
 </html>
