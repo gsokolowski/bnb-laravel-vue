@@ -14,6 +14,10 @@ export default {
         title: String,
         content: String,
         price: Number
+    },
+    mounted() {
+        console.log("Component List Item mounted:");
+        console.log("Iitem title : ", this.title);
     }
 };
 </script>

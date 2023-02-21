@@ -11,7 +11,29 @@ import BookableListItem from './BookableListItem.vue'
 export default {
     components: {
         BookableListItem
-    }
+    },
+    // LifeCircle Hooks are used for example to fetch data from server
+    // use created lifecircle for that to get data as soon as possible as it takes time to fatch data from server
+    // mounted is also used for fatching data but use created as it appers ealier in lifecircle
+    beforeCreate() {
+        console.log("beforeCreate");
+    },
+    created() {
+        console.log("created");
+    },
+    beforeMount() {
+        console.log("beforeMount");
+    },
+    mounted() {
+        console.log("mounted");
+    },
+    beforeDestroy() {
+        console.log("beforeDestroy");
+    },
+    destroyed() {
+        console.log("destroyed");
+    },
+
 }
 </script>
 

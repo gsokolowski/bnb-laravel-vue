@@ -1923,6 +1923,10 @@ __webpack_require__.r(__webpack_exports__);
     title: String,
     content: String,
     price: Number
+  },
+  mounted: function mounted() {
+    console.log("Component List Item mounted:");
+    console.log("Iitem title : ", this.title);
   }
 });
 
@@ -1949,6 +1953,27 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
     BookableListItem: _BookableListItem_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
+  },
+  // LifeCircle Hooks are used for example to fetch data from server
+  // use created lifecircle for that to get data as soon as possible as it takes time to fatch data from server
+  // mounted is also used for fatching data but use created as it appers ealier in lifecircle
+  beforeCreate: function beforeCreate() {
+    console.log("beforeCreate");
+  },
+  created: function created() {
+    console.log("created");
+  },
+  beforeMount: function beforeMount() {
+    console.log("beforeMount");
+  },
+  mounted: function mounted() {
+    console.log("mounted");
+  },
+  beforeDestroy: function beforeDestroy() {
+    console.log("beforeDestroy");
+  },
+  destroyed: function destroyed() {
+    console.log("destroyed");
   }
 });
 
