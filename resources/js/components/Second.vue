@@ -19,9 +19,9 @@
 // and is fired always when this component is rendered
 // this Component needs to be imported into routes file
 export default {
-  mounted() {
-    console.log("Component Second mounted.");
-  }
+//   mounted() {
+//     console.log("Component Second mounted.");
+//   }
 };
 </script>
 

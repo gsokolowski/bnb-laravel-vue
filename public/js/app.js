@@ -2007,10 +2007,9 @@ __webpack_require__.r(__webpack_exports__);
 // mounted as a Life circel event
 // and is fired always when this component is rendered
 // this Component needs to be imported into routes file
-/* harmony default export */ __webpack_exports__["default"] = ({
-  mounted: function mounted() {
-    console.log("Component Second mounted.");
-  }
+/* harmony default export */ __webpack_exports__["default"] = ({//   mounted() {
+  //     console.log("Component Second mounted.");
+  //   }
 });
 
 /***/ }),
@@ -53378,7 +53377,7 @@ __webpack_require__.r(__webpack_exports__);
 var routes = [{
   path: "/",
   component: _bookables_Bookables__WEBPACK_IMPORTED_MODULE_1__["default"],
-  // from Bookables.vue
+  // component registration handled by routes Bookables.vue
   name: 'home'
 }, {
   path: "/second",

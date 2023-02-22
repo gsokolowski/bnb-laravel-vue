@@ -16,7 +16,7 @@
 
 <script>
 // here goes the Business logic of this component
-// mounted is a Life circel event
+// mounted as a Life circel event
 // and is fired always when this component is rendered
 // this Component needs to be imported into routes file
     export default {

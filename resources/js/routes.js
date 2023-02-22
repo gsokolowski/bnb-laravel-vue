@@ -9,7 +9,7 @@ import SecondComponent from "./components/Second"
 const routes = [
     {
         path: "/",
-        component: Bookables, // from Bookables.vue
+        component: Bookables, // component registration handled by routes Bookables.vue
         name: 'home',
     },
     {
