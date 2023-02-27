@@ -1916,15 +1916,14 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   // props : ["title", "content", "price"],
   props: {
     title: String,
-    content: String,
-    price: Number
+    content: String
   },
   mounted: function mounted() {
+    // Newer update props, updates need to happen in data()
     console.log("Component List Item mounted:");
     console.log("Iitem title : ", this.title);
   }
@@ -1963,49 +1962,27 @@ __webpack_require__.r(__webpack_exports__);
     BookableListItem: _BookableListItem_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
   },
   data: function data() {
+    // define in data if you want your components to be reactive
     return {
-      bookable1: {
-        title: "Cheap Villa",
-        content: "Very Cheap Villa"
-      },
-      bookable2: {
-        title: "Cheap Villa 2",
-        content: "Very Cheap Villa 2"
-      }
+      bookable1: null,
+      bookable2: null,
+      bookable3: null
     };
   },
-  // LifeCircle Hooks are used for example to fetch data from server
-  // use created lifecircle for that to get data as soon as possible as it takes time to fatch data from server
-  // mounted is also used for fatching data but use created as it appers ealier in lifecircle
-  // beforeCreate() {
-  //     console.log("beforeCreate");
-  // },
   created: function created() {
     var _this = this;
 
-    console.log(" hook created called");
-    console.log(this.bookable1); // this is observer function
-
-    console.log(this.bookable2); // this is observer function
     // change name automativally after 5seconds
-
     setTimeout(function () {
-      _this.bookable1.title = "Change name into Vill Expensive";
-      _this.bookable1.content = "Very Expesive Villa ";
-    }, 5000);
-  } // beforeMount() {
-  //     console.log("beforeMount");
-  // },
-  // mounted() {
-  //     console.log("mounted");
-  // },
-  // beforeDestroy() {
-  //     console.log("beforeDestroy");
-  // },
-  // destroyed() {
-  //     console.log("destroyed");
-  // }
-
+      _this.bookable1 = {
+        title: "Cheap Villa",
+        content: "Very Cheap Villa"
+      }, _this.bookable2 = {
+        title: "Cheap Villa 2",
+        content: "Very Cheap Villa 2"
+      };
+    }, 2000);
+  }
 });
 
 /***/ }),
@@ -37691,9 +37668,7 @@ var render = function() {
   return _c("div", [
     _c("h1", [_vm._v(_vm._s(_vm.title))]),
     _vm._v(" "),
-    _c("p", [_vm._v(_vm._s(_vm.content))]),
-    _vm._v(" "),
-    _c("p", [_vm._v(_vm._s(_vm.price))])
+    _c("p", [_vm._v(_vm._s(_vm.content))])
   ])
 }
 var staticRenderFns = []
@@ -37722,21 +37697,25 @@ var render = function() {
     "div",
     { staticClass: "container" },
     [
-      _c("bookable-list-item", {
-        attrs: {
-          title: _vm.bookable1.title,
-          content: _vm.bookable1.content,
-          price: 1000
-        }
-      }),
+      _vm.bookable1
+        ? _c("bookable-list-item", {
+            attrs: {
+              title: _vm.bookable1.title,
+              content: _vm.bookable1.content,
+              price: 1000
+            }
+          })
+        : _vm._e(),
       _vm._v(" "),
-      _c("bookable-list-item", {
-        attrs: {
-          title: _vm.bookable2.title,
-          content: _vm.bookable2.content,
-          price: 1500
-        }
-      })
+      _vm.bookable2
+        ? _c("bookable-list-item", {
+            attrs: {
+              title: _vm.bookable2.title,
+              content: _vm.bookable2.content,
+              price: 1500
+            }
+          })
+        : _vm._e()
     ],
     1
   )
