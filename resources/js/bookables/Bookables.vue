@@ -1,15 +1,17 @@
 <template>
     <div class="container">
-        <bookable-list-item v-if=bookable1
-            :title="bookable1.title"
-            :content="bookable1.content"
-            :price="1000"
-        ></bookable-list-item>
-        <bookable-list-item v-if=bookable2
-            :title="bookable2.title"
-            :content="bookable2.content"
-            :price="1500"
-        ></bookable-list-item>
+        <div v-if="loading">
+            <p class="text">data is loading...</p>
+        </div>
+        <div v-else>
+            <bookable-list-item
+                :title="bookable.title"
+                :content="bookable.content"
+                :price="1000"
+                v-for="bookable in bookables"
+                :key="bookable.id"
+            ></bookable-list-item>
+        </div>
     </div>
 </template>
 
@@ -23,26 +25,31 @@ export default {
     data() {
         // define in data if you want your components to be reactive
         return {
-            bookable1: null,
-            bookable2: null,
-            bookable3: null,
+            // data will load from API here
+            loading: false, // don't show text loading page
+            bookables: null
         };
     },
 
     created() {
+        this.loading = true; // show text loading page when props are inicialised
         // change name automativally after 5seconds
         setTimeout(() => {
-            this.bookable1 = {
-                title: "Cheap Villa",
-                content: "Very Cheap Villa"
-            },
-            this.bookable2 = {
-                title: "Cheap Villa 2",
-                content: "Very Cheap Villa 2"
-            }
+            this.bookables = [
+                {
+                    id: 1,
+                    title: "Cheap Villa",
+                    content: "Very Cheap Villa"
+                },
+                (this.bookable2 = {
+                    id: 2,
+                    title: "Cheap Villa 2",
+                    content: "Very Cheap Villa 2"
+                })
+            ];
+            this.loading = false; // don't show text loading page
         }, 2000);
     }
-
 };
 </script>
 

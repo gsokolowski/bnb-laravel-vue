@@ -1956,6 +1956,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
@@ -1964,23 +1966,29 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     // define in data if you want your components to be reactive
     return {
-      bookable1: null,
-      bookable2: null,
-      bookable3: null
+      // data will load from API here
+      loading: false,
+      // don't show text loading page
+      bookables: null
     };
   },
   created: function created() {
     var _this = this;
 
+    this.loading = true; // show text loading page when props are inicialised
     // change name automativally after 5seconds
+
     setTimeout(function () {
-      _this.bookable1 = {
+      _this.bookables = [{
+        id: 1,
         title: "Cheap Villa",
         content: "Very Cheap Villa"
       }, _this.bookable2 = {
+        id: 2,
         title: "Cheap Villa 2",
         content: "Very Cheap Villa 2"
-      };
+      }];
+      _this.loading = false; // don't show text loading page
     }, 2000);
   }
 });
@@ -37693,32 +37701,26 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticClass: "container" },
-    [
-      _vm.bookable1
-        ? _c("bookable-list-item", {
-            attrs: {
-              title: _vm.bookable1.title,
-              content: _vm.bookable1.content,
-              price: 1000
-            }
-          })
-        : _vm._e(),
-      _vm._v(" "),
-      _vm.bookable2
-        ? _c("bookable-list-item", {
-            attrs: {
-              title: _vm.bookable2.title,
-              content: _vm.bookable2.content,
-              price: 1500
-            }
-          })
-        : _vm._e()
-    ],
-    1
-  )
+  return _c("div", { staticClass: "container" }, [
+    _vm.loading
+      ? _c("div", [
+          _c("p", { staticClass: "text" }, [_vm._v("data is loading...")])
+        ])
+      : _c(
+          "div",
+          _vm._l(_vm.bookables, function(bookable) {
+            return _c("bookable-list-item", {
+              key: bookable.id,
+              attrs: {
+                title: bookable.title,
+                content: bookable.content,
+                price: 1000
+              }
+            })
+          }),
+          1
+        )
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
