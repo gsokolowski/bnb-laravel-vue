@@ -30,8 +30,8 @@ export default {
     components: {
         BookableListItem
     },
+    // define in data if you want your components to be reactive
     data() {
-        // define in data if you want your components to be reactive
         return {
             // data will load from API here
             bookables: null,
@@ -39,6 +39,9 @@ export default {
             columns: 3
         };
     },
+    // you can define your own local methodes here
+    // computed are recalculated automatically when one of the propery in the function changes
+    // you cant pass parameters into computed methodes under computed lifecircle hook
     computed: {
         rows() {
             return this.bookables == null
@@ -46,6 +49,9 @@ export default {
                 : Math.ceil(this.bookables.length / this.columns);
         }
     },
+    // you can define your own local methodes here
+    // they are not comuted automatically
+    // you can pass parrameters into methods defined under methodes lifecircle hook
     methods: {
         bookablesInOneRow(row) {
             return this.bookables.slice(

@@ -1974,8 +1974,8 @@ __webpack_require__.r(__webpack_exports__);
   components: {
     BookableListItem: _BookableListItem_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
   },
+  // define in data if you want your components to be reactive
   data: function data() {
-    // define in data if you want your components to be reactive
     return {
       // data will load from API here
       bookables: null,
@@ -1984,11 +1984,17 @@ __webpack_require__.r(__webpack_exports__);
       columns: 3
     };
   },
+  // you can define your own local methodes here
+  // computed are recalculated automatically when one of the propery in the function changes
+  // you cant pass parameters into computed methodes under computed lifecircle hook
   computed: {
     rows: function rows() {
       return this.bookables == null ? 0 : Math.ceil(this.bookables.length / this.columns);
     }
   },
+  // you can define your own local methodes here
+  // they are not comuted automatically
+  // you can pass parrameters into methods defined under methodes lifecircle hook
   methods: {
     bookablesInOneRow: function bookablesInOneRow(row) {
       return this.bookables.slice((row - 1) * this.columns, row * this.columns);
