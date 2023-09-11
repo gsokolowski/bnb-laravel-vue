@@ -7,16 +7,6 @@ import router from "./routes";
 
 window.Vue = require('vue');
 
-// vue routere is handling component registration so you can remove that bitcommented for now
-// Vue.component(
-//     'example-component',
-//     require('./components/ExampleComponent.vue').default
-// );
-
-// Vue.component(
-//     'second-component',
-//     require('./components/Second.vue').default
-// );
 
 // Vue component to use VuewRouter imported above
 // Inside every component of our VueJs application
