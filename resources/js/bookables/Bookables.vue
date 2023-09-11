@@ -67,62 +67,12 @@ export default {
         this.loading = true; // show text loading page when props are inicialised
         // change name automativally after 5seconds
 
-        // setTimeout(() => {
-        //     this.bookables = [
-        //         {
-        //             id: 1,
-        //             title: "Cheap Villa 1",
-        //             content: "Very Cheap Villa"
-        //         },
-        //         {
-        //             id: 2,
-        //             title: "Cheap Villa 2",
-        //             content: "Very Cheap Villa 2"
-        //         },
-        //         {
-        //             id: 3,
-        //             title: "Cheap Villa 3",
-        //             content: "Very Cheap Villa 3"
-        //         },
-        //         {
-        //             id: 4,
-        //             title: "Cheap Villa 4",
-        //             content: "Very Cheap Villa 4"
-        //         },
-        //         {
-        //             id: 5,
-        //             title: "Cheap Villa 5",
-        //             content: "Very Cheap Villa 5"
-        //         },
-        //         {
-        //             id: 6,
-        //             title: "Cheap Villa 6",
-        //             content: "Very Cheap Villa 6"
-        //         },
-        //         {
-        //             id: 7,
-        //             title: "Cheap Villa 7",
-        //             content: "Very Cheap Villa 7"
-        //         }
-        //     ];
-        //     this.loading = false; // don't show text loading page
-        // }, 2000);
-
-        // const p = new Promise((resolve, reject) => {
-        //     console.log(resolve);
-        //     console.log(reject);
-        // setTimeout(() => resolve("Hello"), 3000);
-        // })
-        //     .then(result => "Hello again " + result)
-        //     .then(result => console.log(result))
-        //     .catch(result => console.log(`Error ${result}`));
-        // console.log(p);
-
-        const request = axios.get("/api/bookables").then(response => {
-          this.bookables = response.data;
-          this.loading = false;
+        const request = axios
+            .get("/api/bookables")
+            .then(response => {
+                this.bookables = response.data;
+                this.loading = false;
         }, 2000);
-
     }
 };
 </script>

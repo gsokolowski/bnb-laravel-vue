@@ -19,8 +19,8 @@ export default {
     mounted() {
         // Newer update props, updates need to happen in data()
         console.log("Component List Item mounted:");
-        console.log("Iitem title : ", this.title);
-        console.log("Iitem description : ", this.description);
+        // console.log("Iitem title : ", this.title);
+        // console.log("Iitem description : ", this.description);
     }
 };
 </script>
