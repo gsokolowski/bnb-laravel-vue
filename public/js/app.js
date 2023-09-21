@@ -1916,6 +1916,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
+  // define in data if you want your components to be reactive
   data: function data() {
     return {
       bookable: null
@@ -1930,8 +1931,10 @@ __webpack_require__.r(__webpack_exports__);
     this.loading = true; // show text loading page when props are inicialised
     // change name automativally after 5seconds
 
-    var request = axios.get("/api/bookables/".concat(this.$route.params.id)).then(function (response) {
-      _this.bookable = response.data, _this.loading = false;
+    var request = axios.get("/api/bookables/".concat(this.$route.params.id)) //api call
+    .then(function (response) {
+      _this.bookable = response.data, // api response data passed to bookable
+      _this.loading = false;
     }, 2000);
   }
 });
@@ -2049,7 +2052,8 @@ __webpack_require__.r(__webpack_exports__);
     // change name automativally after 5seconds
 
     var request = axios.get("/api/bookables").then(function (response) {
-      _this.bookables = response.data;
+      _this.bookables = response.data; // here api response is passed to bookables in data()
+
       _this.loading = false;
     }, 2000);
   }
@@ -53203,16 +53207,7 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js"); // import
 
 
 
-window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js"); // vue routere is handling component registration so you can remove that bitcommented for now
-// Vue.component(
-//     'example-component',
-//     require('./components/ExampleComponent.vue').default
-// );
-// Vue.component(
-//     'second-component',
-//     require('./components/Second.vue').default
-// );
-// Vue component to use VuewRouter imported above
+window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js"); // Vue component to use VuewRouter imported above
 // Inside every component of our VueJs application
 // this will give us access to special object
 // the $router and the $route prepended by dolar sign

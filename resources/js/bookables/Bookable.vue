@@ -8,6 +8,7 @@
 <script>
     export default {
 
+        // define in data if you want your components to be reactive
         data() {
             return {
                 bookable:null
@@ -21,9 +22,9 @@
             // change name automativally after 5seconds
 
             const request = axios
-            .get(`/api/bookables/${this.$route.params.id}`)
+            .get(`/api/bookables/${this.$route.params.id}`) //api call
             .then(response => {
-                this.bookable = response.data,
+                this.bookable = response.data, // api response data passed to bookable
                 this.loading = false;
             }, 2000);
         }

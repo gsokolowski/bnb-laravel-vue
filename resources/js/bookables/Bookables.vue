@@ -70,7 +70,7 @@ export default {
         const request = axios
             .get("/api/bookables")
             .then(response => {
-                this.bookables = response.data;
+                this.bookables = response.data; // here api response is passed to bookables in data()
                 this.loading = false;
         }, 2000);
     }
