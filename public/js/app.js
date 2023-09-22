@@ -1933,7 +1933,7 @@ __webpack_require__.r(__webpack_exports__);
 
     var request = axios.get("/api/bookables/".concat(this.$route.params.id)) //api call
     .then(function (response) {
-      _this.bookable = response.data, // api response data passed to bookable
+      _this.bookable = response.data, // api response data passed to bookable in data()
       _this.loading = false;
     }, 2000);
   }
@@ -1961,16 +1961,17 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   // props : ["title", "description", "price"],
   props: {
     title: String,
-    description: String
+    description: String,
+    id: Number
   },
   mounted: function mounted() {
     // Newer update props, updates need to happen in data()
-    console.log("Component List Item mounted:"); // console.log("Iitem title : ", this.title);
-    // console.log("Iitem description : ", this.description);
+    console.log("Component List Item mounted:");
   }
 });
 
@@ -1986,10 +1987,6 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _BookableListItem_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./BookableListItem.vue */ "./resources/js/bookables/BookableListItem.vue");
-//
-//
-//
-//
 //
 //
 //
@@ -37765,13 +37762,22 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "card  w-100" }, [
-    _c("div", { staticClass: "card-body" }, [
-      _c("h5", { staticClass: "card-title" }, [_vm._v(_vm._s(_vm.title))]),
-      _vm._v(" "),
-      _c("p", { staticClass: "card-text" }, [
-        _vm._v("\n            " + _vm._s(_vm.description) + "\n        ")
-      ])
-    ])
+    _c(
+      "div",
+      { staticClass: "card-body" },
+      [
+        _c(
+          "router-link",
+          { attrs: { to: { name: "bookable", params: { id: _vm.id } } } },
+          [_c("h5", { staticClass: "card-title" }, [_vm._v(_vm._s(_vm.title))])]
+        ),
+        _vm._v(" "),
+        _c("p", { staticClass: "card-text" }, [
+          _vm._v(" " + _vm._s(_vm.description))
+        ])
+      ],
+      1
+    )
   ])
 }
 var staticRenderFns = []
@@ -37817,13 +37823,10 @@ var render = function() {
                       staticClass: "col d-flex align-items-stretch"
                     },
                     [
-                      _c("bookable-list-item", {
-                        attrs: {
-                          title: bookable.title,
-                          description: bookable.description,
-                          price: 1000
-                        }
-                      })
+                      _c(
+                        "bookable-list-item",
+                        _vm._b({}, "bookable-list-item", bookable, false)
+                      )
                     ],
                     1
                   )

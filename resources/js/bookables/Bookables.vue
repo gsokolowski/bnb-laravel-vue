@@ -11,11 +11,7 @@
                     v-for="(bookable, columns) in bookablesInOneRow(row)"
                     :key="'row' + row + columns"
                 >
-                    <bookable-list-item
-                        :title="bookable.title"
-                        :description="bookable.description"
-                        :price="1000"
-                    ></bookable-list-item>
+                    <bookable-list-item v-bind="bookable"></bookable-list-item>
                 </div>
                 <div class="col" v-for="p in placeholdersInRow(row)" :key="'placeholder' + row + p"></div>
             </div>
@@ -24,6 +20,7 @@
 </template>
 
 <script>
+
 import BookableListItem from "./BookableListItem.vue";
 
 export default {

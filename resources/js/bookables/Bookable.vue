@@ -24,7 +24,7 @@
             const request = axios
             .get(`/api/bookables/${this.$route.params.id}`) //api call
             .then(response => {
-                this.bookable = response.data, // api response data passed to bookable
+                this.bookable = response.data, // api response data passed to bookable in data()
                 this.loading = false;
             }, 2000);
         }

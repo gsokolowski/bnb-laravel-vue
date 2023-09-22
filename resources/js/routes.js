@@ -2,7 +2,7 @@ import VueRouter from "vue-router";
 
 import Bookables from "./bookables/Bookables";
 import Bookable from "./bookables/Bookable";
-import SecondComponent from "./components/Second"
+import SecondComponent from "./components/Second";
 
 // Define some routes as
 // an array of objects
