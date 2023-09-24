@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
 
@@ -27,5 +28,6 @@ class AppServiceProvider extends ServiceProvider
         // mysql has limitation to string lenght to 191 characters as one string so email longer than that could break
         // so you have to limit this with that
         Schema::defaultStringLength(191);
+        //JsonResource::withoutWrapping();
     }
 }

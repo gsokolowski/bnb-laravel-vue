@@ -1947,7 +1947,8 @@ __webpack_require__.r(__webpack_exports__);
 
     var request = axios.get("/api/bookables/".concat(this.$route.params.id)) //api call
     .then(function (response) {
-      _this.bookable = response.data, // api response data passed to bookable in data()
+      _this.bookable = response.data.data; // api response data passed to bookable in data()
+
       _this.loading = false;
     }, 2000);
   }
@@ -2063,7 +2064,7 @@ __webpack_require__.r(__webpack_exports__);
     // change name automativally after 5seconds
 
     var request = axios.get("/api/bookables").then(function (response) {
-      _this.bookables = response.data; // here api response is passed to bookables in data()
+      _this.bookables = response.data.data; // here api response is passed to bookables in data()
 
       _this.loading = false;
     }, 2000);
