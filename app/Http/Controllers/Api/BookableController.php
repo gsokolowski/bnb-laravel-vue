@@ -10,6 +10,11 @@ class BookableController extends Controller
 {
     public function index()
     {
+        return Bookable::all();
+    }
 
+    public function show($id)
+    {
+        return Bookable::findOrFail($id);
     }
 }
