@@ -1,7 +1,7 @@
 import VueRouter from "vue-router";
 
 import Bookables from "./bookables/Bookables";
-import Bookable from "./bookables/Bookable";
+import Bookable from "./bookable/Bookable";
 import SecondComponent from "./components/Second";
 
 // Define some routes as
@@ -15,7 +15,7 @@ const routes = [
     },
     {
         path: "/bookable/:id",
-        component: Bookable, // component registration handled by routes /bookables/Bookable.vue
+        component: Bookable, // component registration handled by routes /bookable/Bookable.vue
         name: 'bookable'
     },
     {
