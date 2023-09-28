@@ -1941,12 +1941,20 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
       from: null,
       to: null
     };
+  },
+  methods: {
+    // this metode is called on Check Availability button
+    checkAvailability: function checkAvailability() {
+      alert('checkAvailability()');
+    }
   }
 });
 
@@ -38482,6 +38490,15 @@ var render = function() {
           attrs: { type: "text", name: "from", placeholder: "Start date" },
           domProps: { value: _vm.from },
           on: {
+            keyup: function($event) {
+              if (
+                !$event.type.indexOf("key") &&
+                _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
+              ) {
+                return null
+              }
+              return _vm.checkAvailability($event)
+            },
             input: function($event) {
               if ($event.target.composing) {
                 return
@@ -38508,6 +38525,15 @@ var render = function() {
           attrs: { type: "text", name: "to", placeholder: "End date" },
           domProps: { value: _vm.to },
           on: {
+            keyup: function($event) {
+              if (
+                !$event.type.indexOf("key") &&
+                _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
+              ) {
+                return null
+              }
+              return _vm.checkAvailability($event)
+            },
             input: function($event) {
               if ($event.target.composing) {
                 return
@@ -38519,9 +38545,18 @@ var render = function() {
       ])
     ]),
     _vm._v(" "),
-    _c("button", { staticClass: "btn btn-secondary btn-block" }, [
-      _vm._v("Check!")
-    ])
+    _c(
+      "button",
+      {
+        staticClass: "btn btn-secondary btn-block",
+        on: {
+          click: function($event) {
+            return _vm.checkAvailability()
+          }
+        }
+      },
+      [_vm._v("Check Availability")]
+    )
   ])
 }
 var staticRenderFns = []

@@ -12,6 +12,7 @@
           class="form-control form-control-sm"
           placeholder="Start date"
           v-model="from"
+          @keyup.enter="checkAvailability"
         />
       </div>
 
@@ -23,20 +24,29 @@
             class="form-control form-control-sm"
             placeholder="End date"
             v-model="to"
+            @keyup.enter="checkAvailability"
             />
       </div>
     </div>
 
-    <button class="btn btn-secondary btn-block">Check!</button>
+    <button class="btn btn-secondary btn-block" @click="checkAvailability()">Check Availability</button>
   </div>
 </template>
 
 <script>
     export default {
+
         data() {
             return {
                 from: null,
                 to: null
+            }
+        },
+
+        methods: {
+            // this metode is called on Check Availability button
+            checkAvailability() {
+                alert('checkAvailability()')
             }
         }
     }
