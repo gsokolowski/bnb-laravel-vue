@@ -12,5 +12,9 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         $this->call(BookablesTableSeeder::class);
+        $this->call(BookingsTableSeeder::class);
     }
 }
+
+// run this command on laradoc container to re-seed database
+//php artisan migrate:refresh --seed
