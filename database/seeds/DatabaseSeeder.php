@@ -17,4 +17,4 @@ class DatabaseSeeder extends Seeder
 }
 
 // run this command on laradoc container to re-seed database
-//php artisan migrate:refresh --seed
+// php artisan migrate:refresh --seed
